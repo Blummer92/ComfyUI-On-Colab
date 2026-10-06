@@ -2,7 +2,7 @@
 
 Run ComfyUI in Google Colab with optional Google Drive persistence, one-click model downloads, and public access via Cloudflare Tunnel or Localtunnel.
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nazdridoy/ComfyUI-On-Colab/blob/main/ComfyUIonColab.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Blummer92/ComfyUI-On-Colab/blob/main/ComfyUIonColab.ipynb)
 
 ---
 
@@ -15,7 +15,16 @@ Run ComfyUI in Google Colab with optional Google Drive persistence, one-click mo
   - Cloudflare Tunnel (trycloudflare)
   - Localtunnel (fallback)
 
-## Quick start
+## Easy mode quick start
+1) Click the Colab badge above to open `ComfyUIonColab.ipynb`.
+2) Run the Drive mount cell.
+3) Run **Setup And Update ComfyUI**. It updates ComfyUI and installs/updates ComfyUI-Manager automatically.
+4) Add `CIVITAI_API_TOKEN` in Colab Secrets if your Civitai download requires authentication.
+5) Run **Models Download** with `DOWNLOAD_JUGGERNAUT_XL = True`. The starter Juggernaut XL checkpoint is downloaded once and reused from Drive.
+6) Run the **EASY MODE** start cells and open the printed Cloudflare URL.
+7) In ComfyUI, choose a built-in workflow template (or the default graph), select `juggernautXL_hyper.safetensors`, enter your prompt, and click **Queue**.
+
+### Advanced/manual start
 1) Click the Colab badge above to open `ComfyUIonColab.ipynb`.
 2) In the first cell, set `MODE` to `MOUNT` and run to mount Google Drive (recommended for persistence).
 3) (Optional) Set `DRIVE_PATH` in the Setup cell, e.g. `/content/drive/MyDrive`. If set, the workspace will be created at `<DRIVE_PATH>/ComfyUI` and will persist across sessions. If left empty, the workspace is `/content/ComfyUI` (ephemeral).
